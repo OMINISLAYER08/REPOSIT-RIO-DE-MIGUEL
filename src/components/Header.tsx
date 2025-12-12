@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
+import logoVector from "@/assets/logo-vector.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,16 +24,14 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <motion.a 
           href="#inicio"
-          className="flex items-center gap-3"
+          className="flex items-center"
           whileHover={{ scale: 1.05 }}
         >
-          <div className="w-12 h-12 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold">
-            <span className="text-primary-foreground font-display font-bold text-xl">V</span>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-gradient-gold font-display font-bold text-xl leading-tight">Vector</span>
-            <span className="text-muted-foreground text-xs font-body tracking-widest uppercase">Studio</span>
-          </div>
+          <img 
+            src={logoVector} 
+            alt="Vector Studios - Innovate & Design" 
+            className="h-10 md:h-12 w-auto"
+          />
         </motion.a>
 
         {/* Desktop Navigation */}

@@ -1,36 +1,42 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import portfolioLogo1 from "@/assets/portfolio-logo-1.jpg";
+import portfolioLogo2 from "@/assets/portfolio-logo-2.jpg";
+import portfolioSite1 from "@/assets/portfolio-site-1.jpg";
+import portfolioSite2 from "@/assets/portfolio-site-2.jpg";
+import portfolioShirt1 from "@/assets/portfolio-shirt-1.jpg";
+import portfolioShirt2 from "@/assets/portfolio-shirt-2.jpg";
 
 const portfolioItems = [
   {
-    title: "Brand Identity",
+    title: "Café Dourado",
     category: "Logo Design",
-    gradient: "from-gold/20 to-gold-dark/20",
+    image: portfolioLogo1,
   },
   {
-    title: "E-commerce Premium",
+    title: "Escritório Jurídico",
     category: "Web Design",
-    gradient: "from-gold-dark/20 to-gold/20",
+    image: portfolioSite1,
   },
   {
-    title: "Coleção Urban",
+    title: "Coleção Geometric",
     category: "Camisas",
-    gradient: "from-gold/30 to-transparent",
+    image: portfolioShirt1,
   },
   {
-    title: "Startup Tech",
+    title: "Bella Estética",
     category: "Logo Design",
-    gradient: "from-transparent to-gold/20",
+    image: portfolioLogo2,
   },
   {
-    title: "Landing Page",
+    title: "Joalheria Premium",
     category: "Web Design",
-    gradient: "from-gold/20 to-gold-light/20",
+    image: portfolioSite2,
   },
   {
-    title: "Edição Limitada",
+    title: "Urban Abstract",
     category: "Camisas",
-    gradient: "from-gold-light/20 to-gold/20",
+    image: portfolioShirt2,
   },
 ];
 
@@ -66,16 +72,15 @@ const Portfolio = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer border border-border hover:border-gold/50 transition-all duration-500"
             >
-              {/* Gradient Background */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} bg-secondary`} />
-              
-              {/* Decorative elements */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-20">
-                <div className="w-32 h-32 border-2 border-gold rounded-full" />
-              </div>
+              {/* Portfolio Image */}
+              <img 
+                src={item.image} 
+                alt={item.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
 
-              {/* Content */}
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                 <span className="text-gold text-sm font-medium">{item.category}</span>
