@@ -19,14 +19,10 @@ export default defineConfig(({ mode }) => {
       alias: {
         "@": path.resolve(__dirname, "./src"),
       },
+      mainFields: ['module', 'jsnext:main', 'jsnext', 'main'],
     },
     optimizeDeps: {
       include: ['firebase/firestore'],
-    },
-    build: {
-      rollupOptions: {
-        external: ['firebase/app', 'firebase/auth', 'firebase/firestore', 'firebase/storage'],
-      },
     },
   };
   console.log('Vite server config:', config.server); // Added for debugging
