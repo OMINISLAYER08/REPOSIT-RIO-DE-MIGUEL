@@ -20,6 +20,9 @@ export default defineConfig(({ mode }) => {
         "@": path.resolve(__dirname, "./src"),
       },
     },
+    optimizeDeps: {
+      include: ['firebase/firestore'],
+    },
   };
   console.log('Vite server config:', config.server); // Added for debugging
   return config;
