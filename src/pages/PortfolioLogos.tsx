@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { db, collection, getDocs } from "@/lib/firebase"; // Import db, collection, getDocs from your firebase config
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "@/lib/firebase"; // Import db from your firebase config
 
 interface LogoItem {
   id: string;
