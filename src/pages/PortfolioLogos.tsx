@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { staticLogos } from "@/data/staticLogos"; // Import static logos data
+import { getLogos } from "@/lib/portfolioLoader";
 
 const PortfolioLogos = () => {
   return (
@@ -24,15 +24,15 @@ const PortfolioLogos = () => {
             </p>
           </div>
 
-          {staticLogos.length === 0 ? (
-            <p className="text-center text-muted-foreground">Nenhum logotipo estático adicionado ainda. Adicione em src/data/staticLogos.ts</p>
+          {getLogos().length === 0 ? (
+            <p className="text-center text-muted-foreground">Nenhum logotipo estático adicionado ainda.</p>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {staticLogos.map((logo) => (
-                <div key={logo.id} className="relative bg-card rounded-lg shadow-sm overflow-hidden border border-border">
+              {getLogos().map((logo) => (
+                <div key={logo.id} className="relative bg-card rounded-lg shadow-sm overflow-hidden border border-border flex flex-col">
                   <img src={logo.imageUrl} alt={logo.description} className="w-full h-48 object-cover" />
-                  <div className="p-4">
-                    <p className="text-muted-foreground text-sm">{logo.description}</p>
+                  <div className="p-4 bg-gray-800/50 flex-grow"> {/* Enhanced styling for description area */}
+                    <p className="text-muted-foreground text-sm leading-relaxed">{logo.description}</p>
                   </div>
                 </div>
               ))}

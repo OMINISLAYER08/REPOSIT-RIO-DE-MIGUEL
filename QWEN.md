@@ -1,0 +1,2 @@
+## Qwen Added Memories
+- Projeto Vector Studio: Componente Portfolio.tsx modificado para remover imagens e substituir por espaços em branco. Pasta public/images/portfolio/ criada para armazenar imagens personalizadas. Ordem dos projetos: 1) Café Bourbon 2) TechFlow Solutions 3) Coleção Urban Style 4) Bella Cucina 5) FitLife Academy 6) Rock Festival. Para adicionar imagens novamente, colocar arquivos nomeados de forma significativa na pasta public/images/portfolio/ e atualizar o código para referenciar essas imagens locais.

@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useState, useEffect } from "react"; // Added useState and useEffect
+import { useState, useEffect } from "react";
+import { getCamisas } from "@/lib/portfolioLoader"; // Import getCamisas
 
 const Clock = () => {
   const [time, setTime] = useState(new Date());
@@ -18,13 +19,9 @@ const Clock = () => {
   const minutes = time.getMinutes();
   const hours = time.getHours();
 
-  // Calculate rotation for hands
-  // Second hand: 360 degrees / 60 seconds = 6 degrees per second
-  // Minute hand: 360 degrees / 60 minutes = 6 degrees per minute (plus second influence)
-  // Hour hand: 360 degrees / 12 hours = 30 degrees per hour (plus minute influence)
   const secondDeg = seconds * 6;
-  const minuteDeg = minutes * 6 + seconds * 0.1; // 6 deg/min + 0.1 deg/s
-  const hourDeg = (hours % 12) * 30 + minutes * 0.5; // 30 deg/hr + 0.5 deg/min
+  const minuteDeg = minutes * 6 + seconds * 0.1;
+  const hourDeg = (hours % 12) * 30 + minutes * 0.5;
 
   return (
     <div className="relative w-16 h-16 rounded-full border-2 border-gold flex items-center justify-center bg-gray-800">
@@ -53,6 +50,8 @@ const Clock = () => {
 };
 
 const PortfolioCamisas = () => {
+  const camisas = getCamisas(); // Get camisas dynamically
+
   return (
     <>
       <Header />
@@ -66,19 +65,30 @@ const PortfolioCamisas = () => {
             <h1 className="font-display text-4xl md:text-6xl font-bold mt-4 mb-2">
               <span className="text-gradient-gold">Camisas</span> Personalizadas
             </h1>
-            <p className="text-gold text-2xl md:text-3xl font-semibold animate-pulse">
-              Em Breve!
-            </p>
-            <div className="flex items-center gap-4">
-              <Clock />
-              <p className="text-muted-foreground max-w-2xl text-lg md:text-xl">
-                Nossa coleção exclusiva de estampas e designs para vestuário está sendo preparada com muito carinho. Fique ligado!
-              </p>
-            </div>
-          </div>
-          {/* Placeholder for shirts grid - currently empty as content is coming soon */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* As futuras camisas serão adicionadas aqui */}
+            {camisas.length === 0 ? (
+              <>
+                <p className="text-gold text-2xl md:text-3xl font-semibold animate-pulse">
+                  Em Breve!
+                </p>
+                <div className="flex items-center gap-4">
+                  <Clock />
+                  <p className="text-muted-foreground max-w-2xl text-lg md:text-xl">
+                    Nossa coleção exclusiva de estampas e designs para vestuário está sendo preparada com muito carinho. Fique ligado!
+                  </p>
+                </div>
+              </>
+            ) : (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {camisas.map((camisa) => (
+                  <div key={camisa.id} className="relative bg-card rounded-lg shadow-sm overflow-hidden border border-border flex flex-col">
+                    <img src={camisa.imageUrl} alt={camisa.description} className="w-full h-48 object-cover" />
+                    <div className="p-4 bg-gray-800/50 flex-grow">
+                      <p className="text-muted-foreground text-sm leading-relaxed">{camisa.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </main>
