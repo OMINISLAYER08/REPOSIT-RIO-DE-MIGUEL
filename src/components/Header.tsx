@@ -19,17 +19,17 @@ const Header = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-lg border-b border-gold"
+      className="fixed top-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-lg border-b border-gold"
     >
       <div className="container mx-auto px-4 py-2 flex items-center justify-between">
-        <motion.a 
+        <motion.a
           href="#inicio"
           className="flex items-center gap-2"
           whileHover={{ scale: 1.05 }}
         >
-          <img 
-            src={logo} 
-            alt="Vector Studio Logo" 
+          <img
+            src={logo}
+            alt="Vector Studio Logo"
             className="w-14 h-14 rounded-full object-cover shadow-gold"
           />
         </motion.a>
