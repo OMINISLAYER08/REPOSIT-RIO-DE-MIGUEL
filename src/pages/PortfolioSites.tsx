@@ -26,7 +26,13 @@ const PortfolioSites = () => {
           </div>
 
           {sites.length === 0 ? (
-            <p className="text-center text-muted-foreground">Nenhum site adicionado ainda. Adicione em public/portfolio/PORTIFÓLIO STOCKS/SITES</p>
+            <div className="text-center py-12">
+              <p className="text-gold text-2xl font-bold mb-4">Em Breve</p>
+              <p className="text-muted-foreground max-w-lg mx-auto">
+                Estamos atualizando nosso portfólio com novos projetos de alta performance.
+                Fique atento para novidades!
+              </p>
+            </div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {sites.map((site) => (
