@@ -151,7 +151,7 @@ const PortfolioLogos = () => {
                           <h2 className="text-2xl md:text-3xl font-bold text-gold font-display mb-6">
                             {logo.description.split("\n\n")[0]}
                           </h2>
-                          <div className="space-y-4 text-gray-300">
+                          <div className="space-y-4 text-gray-200">
                             {logo.description.split("\n\n").slice(1).map((paragraph, idx) => (
                               <p key={idx} className="leading-relaxed text-sm md:text-base">
                                 {paragraph}

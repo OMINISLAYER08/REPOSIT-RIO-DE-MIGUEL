@@ -21,7 +21,7 @@ const Clock = () => {
       const totalMinutes = totalSeconds / 60;
       const minutes = totalMinutes % 60;
       const totalHours = totalMinutes / 60;
-      const hours = (totalHours % 12) + (minutes / 60); // Add fractional hours based on minutes
+      const hours = (totalHours % 12) + (minutes / 60);
 
       const secondDeg = seconds * 6;
       const minuteDeg = minutes * 6;
@@ -47,41 +47,44 @@ const Clock = () => {
   }, [initialTime]);
 
   return (
-    <div className="relative w-20 h-20 rounded-full border-4 border-gold flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 shadow-lg shadow-gold/20">
-      {/* Hour markings */}
-      {Array.from({ length: 12 }).map((_, i) => (
+    <div className="relative w-24 h-24 rounded-full border border-gold/30 bg-black/40 backdrop-blur-sm flex items-center justify-center shadow-[0_0_15px_rgba(234,179,8,0.1)]">
+      {/* Decorative inner ring */}
+      <div className="absolute inset-2 rounded-full border border-white/5 opacity-50" />
+
+      {/* Cardinal points */}
+      {[0, 90, 180, 270].map((deg) => (
         <div
-          key={i}
-          className="absolute w-0.5 h-2 bg-gold origin-bottom"
+          key={deg}
+          className="absolute w-1 h-3 bg-gold/50"
           style={{
-            transform: `translateX(-50%) rotate(${i * 30}deg)`,
-            top: '10%',
+            top: '50%',
             left: '50%',
+            transform: `translate(-50%, -50%) rotate(${deg}deg) translateY(-36px)`,
           }}
         />
       ))}
 
       {/* Center dot */}
-      <div className="absolute w-2 h-2 bg-gold rounded-full z-10"></div>
+      <div className="absolute w-1.5 h-1.5 bg-gold rounded-full z-20 shadow-[0_0_10px_rgba(234,179,8,0.5)]"></div>
 
       {/* Hour Hand */}
       <div
         id="clock-hour-hand"
-        className="absolute w-1 h-6 bg-gold origin-bottom rounded-full shadow-sm shadow-gold"
+        className="absolute w-[2px] h-6 bg-white/80 origin-bottom rounded-full z-10"
         style={{ top: '50%', left: '50%', transform: 'translate(-50%, -100%)' }}
       ></div>
 
       {/* Minute Hand */}
       <div
         id="clock-minute-hand"
-        className="absolute w-0.5 h-8 bg-gold origin-bottom rounded-full shadow-sm shadow-gold"
+        className="absolute w-[1.5px] h-8 bg-white/60 origin-bottom rounded-full z-10"
         style={{ top: '50%', left: '50%', transform: 'translate(-50%, -100%)' }}
       ></div>
 
-      {/* Second Hand */}
+      {/* Second Hand - Glowing */}
       <div
         id="clock-second-hand"
-        className="absolute w-0.5 h-7 bg-gold origin-bottom rounded-full opacity-80"
+        className="absolute w-[1px] h-9 bg-gold origin-bottom rounded-full z-10 shadow-[0_0_8px_rgba(234,179,8,0.8)]"
         style={{ top: '50%', left: '50%', transform: 'translate(-50%, -100%)' }}
       ></div>
     </div>
