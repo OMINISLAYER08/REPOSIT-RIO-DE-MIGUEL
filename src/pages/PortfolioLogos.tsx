@@ -129,14 +129,14 @@ const PortfolioLogos = () => {
                     <VisuallyHidden.Root>
                       <DialogTitle>{logo.description.split("\n\n")[0]}</DialogTitle>
                     </VisuallyHidden.Root>
-                    <div className="relative flex flex-col md:flex-row h-[80dvh] md:h-[750px]">
+                    <div className="relative flex flex-col md:flex-row h-[85dvh] md:h-[750px] w-full bg-black/95">
                       {/* Close Button */}
-                      <DialogClose className="absolute top-4 right-4 z-50 text-white/50 hover:text-white bg-black/50 rounded-full p-2 transition-colors">
-                        <X className="w-6 h-6" />
+                      <DialogClose className="absolute top-4 right-4 z-50 text-white/70 hover:text-white bg-black/40 backdrop-blur-md rounded-full p-2 transition-colors border border-white/10">
+                        <X className="w-5 h-5" />
                       </DialogClose>
 
-                      {/* Image Side */}
-                      <div className="w-full md:w-2/3 bg-radial-gradient flex items-center justify-center p-8 relative">
+                      {/* Image Side - Mobile: Fixed height, Desktop: Full height */}
+                      <div className="w-full h-[45%] md:h-full md:w-2/3 bg-radial-gradient flex items-center justify-center p-6 relative overflow-hidden shrink-0">
                         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold/10 via-black to-black -z-10" />
                         <img
                           src={logo.imageUrl}
@@ -145,20 +145,25 @@ const PortfolioLogos = () => {
                         />
                       </div>
 
-                      {/* Info Side */}
-                      <div className="w-full md:w-1/3 border-l border-white/10 bg-card/30 flex flex-col h-full overflow-hidden">
-                        <ScrollArea className="h-full w-full p-8 pt-24">
-                          <h2 className="text-2xl md:text-3xl font-bold text-gold font-display mb-6">
-                            {logo.description.split("\n\n")[0]}
-                          </h2>
-                          <div className="space-y-4 text-gray-200">
-                            {logo.description.split("\n\n").slice(1).map((paragraph, idx) => (
-                              <p key={idx} className="leading-relaxed text-sm md:text-base">
-                                {paragraph}
-                              </p>
-                            ))}
+                      {/* Info Side - Mobile: Remaining height with scroll, Desktop: Full height */}
+                      <div className="w-full h-[55%] md:h-full md:w-1/3 border-t md:border-t-0 md:border-l border-white/10 bg-card/30 flex flex-col overflow-hidden relative">
+                        <ScrollArea className="h-full w-full">
+                          <div className="p-8 pt-6 md:pt-24 pb-12">
+                            <h2 className="text-2xl md:text-3xl font-bold text-gold font-display mb-4 md:mb-6">
+                              {logo.description.split("\n\n")[0]}
+                            </h2>
+                            <div className="space-y-4 text-gray-200">
+                              {logo.description.split("\n\n").slice(1).map((paragraph, idx) => (
+                                <p key={idx} className="leading-relaxed text-sm md:text-base">
+                                  {paragraph}
+                                </p>
+                              ))}
+                            </div>
                           </div>
                         </ScrollArea>
+
+                        {/* Mobile bottom fade for visual cue */}
+                        <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-black/90 to-transparent pointer-events-none md:hidden" />
                       </div>
                     </div>
                   </DialogContent>
