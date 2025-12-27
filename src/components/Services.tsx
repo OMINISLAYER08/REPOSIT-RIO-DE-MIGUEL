@@ -57,16 +57,21 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="group relative bg-secondary/50 backdrop-blur-sm border border-border rounded-2xl p-8 hover:border-gold/50 transition-all duration-500 hover:shadow-gold"
+              className="group relative bg-card/30 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:border-gold/50 transition-all duration-500 hover:shadow-gold hover:-translate-y-2"
             >
               {service.isNew && (
-                <div className="absolute -top-3 -right-3 bg-gradient-gold text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
+                <div className="absolute -top-3 -right-3 bg-gradient-gold text-primary-foreground text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                   NOVO
                 </div>
               )}
 
               <div className="w-14 h-14 rounded-xl bg-gradient-gold flex items-center justify-center mb-6 shadow-gold group-hover:scale-110 transition-transform duration-300">
-                <service.icon className="w-7 h-7 text-primary-foreground" />
+                <motion.div
+                  animate={{ y: [0, -4, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <service.icon className="w-7 h-7 text-primary-foreground" />
+                </motion.div>
               </div>
 
               <h3 className="font-display text-2xl font-bold mb-4 group-hover:text-gold transition-colors">
