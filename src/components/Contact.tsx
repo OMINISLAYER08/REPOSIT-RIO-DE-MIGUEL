@@ -18,13 +18,6 @@ const Contact = () => {
       href: "https://wa.me/5519981753659",
       color: "hover:text-green-500",
     },
-    {
-      icon: Mail,
-      label: "E-mail",
-      value: "contato@vectorstudio.com",
-      href: "mailto:contato@vectorstudio.com",
-      color: "hover:text-blue-500",
-    },
   ];
 
   return (
@@ -47,7 +40,7 @@ const Contact = () => {
             Transforme sua <span className="text-gradient-gold">marca</span> hoje mesmo
           </h2>
           <p className="text-muted-foreground text-lg mb-12">
-            Entre em contato e receba um orçamento personalizado. 
+            Entre em contato e receba um orçamento personalizado.
             Estamos prontos para dar vida às suas ideias!
           </p>
 
