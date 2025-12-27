@@ -30,7 +30,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="flex items-center gap-2 text-muted-foreground text-sm"
           >
-            <span>© 2024 Vector Studio. Feito com</span>
+            <span>© 2025 Vector Studio. Feito com</span>
             <Heart className="w-4 h-4 text-gold fill-gold" />
           </motion.div>
 
