@@ -47,7 +47,7 @@ const Clock = () => {
   }, [initialTime]);
 
   return (
-    <div className="relative w-24 h-24 rounded-full border border-gold/30 bg-black/40 backdrop-blur-sm flex items-center justify-center shadow-[0_0_15px_rgba(234,179,8,0.1)]">
+    <div className="relative w-24 h-24 rounded-full border border-gold/30 bg-black/40 backdrop-blur-sm flex items-center justify-center shadow-[0_0_15px_rgba(234,179,8,0.1)] shrink-0">
       {/* Decorative inner ring */}
       <div className="absolute inset-2 rounded-full border border-white/5 opacity-50" />
 
