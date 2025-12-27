@@ -12,6 +12,7 @@ import {
   DialogClose,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
 const PortfolioLogos = () => {
@@ -145,17 +146,19 @@ const PortfolioLogos = () => {
                       </div>
 
                       {/* Info Side */}
-                      <div className="w-full md:w-1/3 p-8 border-l border-white/10 flex flex-col justify-center bg-card/30">
-                        <h2 className="text-2xl md:text-3xl font-bold text-gold font-display mb-6">
-                          {logo.description.split("\n\n")[0]}
-                        </h2>
-                        <div className="space-y-4 text-gray-300">
-                          {logo.description.split("\n\n").slice(1).map((paragraph, idx) => (
-                            <p key={idx} className="leading-relaxed text-sm md:text-base">
-                              {paragraph}
-                            </p>
-                          ))}
-                        </div>
+                      <div className="w-full md:w-1/3 border-l border-white/10 bg-card/30 flex flex-col h-full overflow-hidden">
+                        <ScrollArea className="h-full w-full p-8">
+                          <h2 className="text-2xl md:text-3xl font-bold text-gold font-display mb-6">
+                            {logo.description.split("\n\n")[0]}
+                          </h2>
+                          <div className="space-y-4 text-gray-300">
+                            {logo.description.split("\n\n").slice(1).map((paragraph, idx) => (
+                              <p key={idx} className="leading-relaxed text-sm md:text-base">
+                                {paragraph}
+                              </p>
+                            ))}
+                          </div>
+                        </ScrollArea>
                       </div>
                     </div>
                   </DialogContent>
