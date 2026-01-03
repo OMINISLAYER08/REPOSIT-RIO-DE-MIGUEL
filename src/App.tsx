@@ -12,6 +12,8 @@ import PortfolioCamisas from "./pages/PortfolioCamisas";
 
 
 
+import ScrollToTop from "./components/ScrollToTop";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -21,6 +23,7 @@ const App = () => (
       <Sonner />
       <WhatsAppButton />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/portfolio/logos" element={<PortfolioLogos />} />
