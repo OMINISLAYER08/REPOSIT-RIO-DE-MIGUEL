@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+// Force rebuild timestamp: 2026-01-03
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 // https://vitejs.dev/config/
