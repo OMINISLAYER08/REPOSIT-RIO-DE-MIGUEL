@@ -37,20 +37,36 @@ async function generateManifests() {
       .filter(dirent => dirent.isFile() && /\.(jpg|jpeg|png|gif|webp)$/i.test(dirent.name))
       .map(dirent => dirent.name);
 
+    // Check for _metadata.json to get extra info like projectUrl
+    const metadataPath = path.join(categoryPath, '_metadata.json');
+    let metadata = {};
+    if (fs.existsSync(metadataPath)) {
+      try {
+        metadata = JSON.parse(await fs.promises.readFile(metadataPath, 'utf-8'));
+      } catch (e) {
+        console.error(`Error reading metadata for ${category}:`, e);
+      }
+    }
+
     for (const imageFile of imageFiles) {
       const baseName = imageFile.replace(/\.[^/.]+$/, "").replace(/\.[^/.]+$/, ""); // Strip all extensions
       const descriptionFilePath = path.join(categoryPath, `${baseName}.txt`);
       const imageUrl = `/portfolio/PORTIFÓLIO STOCKS/${category}/${imageFile}`; // Image URL still points to public folder
       let description = baseName; // Default description
 
+      // Override description if txt file exists
       if (fs.existsSync(descriptionFilePath)) {
         description = (await fs.promises.readFile(descriptionFilePath, 'utf-8')).trim();
       }
 
+      // Check metadata for overrides or extra fields
+      const itemMetadata = metadata[baseName] || {};
+
       manifest.push({
         id: baseName, // Use baseName as a simple ID
         imageUrl,
-        description,
+        description: itemMetadata.description || description,
+        projectUrl: itemMetadata.projectUrl || undefined, // Add projectUrl support
       });
     }
 

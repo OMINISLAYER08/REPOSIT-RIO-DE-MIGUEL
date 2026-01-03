@@ -1,17 +1,12 @@
 [
   {
-    "id": "EcoVolt",
-    "imageUrl": "/logo-ecovolt.png",
-    "description": "EcoVolt Systems\n\nEnergia inteligente para um futuro sustentável. Soluções de alta performance em tecnologia elétrica e automação.\n\nConectando inovação e eficiência."
+    "id": "D.R.A.C.O",
+    "imageUrl": "/portfolio/PORTIFÓLIO STOCKS/LOGOTIPOS/D.R.A.C.O.png.png",
+    "description": "D.R.A.C.O. Contabilidades\r\n\r\nGuardiões implacáveis das suas finanças. Com precisão afiada e visão estratégica, protegemos o seu patrimônio como um dragão imperial defende seu tesouro. Expertise contábil sólida, soluções modernas e total confidencialidade – tudo envolto em um escudo de confiança inabalável.\r\n\r\nD.R.A.C.O.: onde a contabilidade ganha força e equilíbrio."
   },
   {
-    "id": "TerraViva",
-    "imageUrl": "/logo-terra-viva.png",
-    "description": "Terra Viva Gastronomia\n\nO sabor autêntico da natureza. Culinária orgânica e artesanal, cultivada com respeito e preparada com paixão.\n\nNutrindo corpo e alma."
-  },
-  {
-    "id": "Aura",
-    "imageUrl": "/logo-aura.png",
-    "description": "Aura Jewelry\n\nDesign que transcende o tempo. Joias minimalistas criadas para exaltar a elegância natural de quem as veste.\n\nLuxo essencial em cada detalhe."
+    "id": "logoteste1",
+    "imageUrl": "/portfolio/PORTIFÓLIO STOCKS/LOGOTIPOS/logoteste1.png.jpeg",
+    "description": "Esta é uma descrição de teste para o logotipo logoteste1."
   }
 ]
