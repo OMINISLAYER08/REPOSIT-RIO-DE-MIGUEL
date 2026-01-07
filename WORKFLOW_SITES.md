@@ -50,8 +50,13 @@ Este guia explica como transformar uma ideia em um site online e integrado ao po
 
 ---
 
-### RESUMO RÁPIDO
-1.  **Crie** no Lovable -> **Baixe**.
-2.  **Crie a pasta** em `projects/NOMEDOPROJETO` -> **Cole**.
-3.  **Me chame** para polir.
-4.  **Vercel** -> Importar Repo -> Root Directory = `projects/NOMEDOPROJETO`.
+### RESUMO RÁPIDO (CHEATSHEET)
+1.  **Criação:** Lovable -> **Baixe o ZIP**.
+2.  **Organização:** Extraia em `vector-studios/projects/NOME_DO_PROJETO`.
+3.  **Polimento:** Peça para a IA aplicar o "Estilo Vector" (VEX).
+4.  **Portfolio:**
+    *   Adicione o ícone/capa em `public/portfolio/PORTIFÓLIO STOCKS/SITES/`.
+    *   Configure o `_metadata.json` na pasta.
+    *   Rode: `node generatePortfolioManifests.cjs`.
+5.  **Deploy:** Vercel -> Novo Projeto -> Root Directory = `projects/NOME_DO_PROJETO`.
+

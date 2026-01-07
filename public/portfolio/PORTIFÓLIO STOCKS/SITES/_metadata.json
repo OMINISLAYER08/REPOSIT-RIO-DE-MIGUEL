@@ -2,5 +2,9 @@
     "AuraJewelry": {
         "description": "Aura Jewelry - Luxo e Elegância Minimalista. Site completo com efeitos visuais avançados.",
         "projectUrl": "https://aurajewelrypreview.vercel.app/"
+    },
+    "Ecovolt": {
+        "description": "EcoVolt Solutions - Energia Limpa, Tecnologia do Futuro. Identidade visual dinâmica que conecta sustentabilidade com inovação tecnológica.",
+        "projectUrl": ""
     }
 }

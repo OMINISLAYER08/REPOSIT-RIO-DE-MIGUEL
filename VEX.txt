@@ -36,42 +36,42 @@ Objetivo: Servir como base de conhecimento ("Bagagem") para futuras iterações 
 
 ### 3. HISTÓRICO DE DESENVOLVIMENTO (Diário de Bordo)
 
-#### FASE 1: Refinamento da Vector (Identidade)
-*   Criação de identidade visual escura e vibrante.
-*   Implementação de micro-interações e efeitos de vidro (glassmorphism).
+#### FASE 5: Gamificação e Cyber-Design (O Salto de UX)
+*   **Conceito:** Transformação da Dashboard em uma experiência similar a um RPG/Cyberpunk.
+*   **Sistema de XP:** Implementação da fórmula `100 * Level^1.5`.
+*   **Economia:** Adição de Moedas (Coins) e Loja de Recompensas (Loja).
+*   **Interface:** Barra de XP animada, navegação inferior fixa para mobile, e estética "Neon/Glow".
 
-#### FASE 2: Integração Aura Jewelry (O Desafio Técnico)
-*   **Problema:** O site Aura era um projeto externo. O cliente queria integrá-lo ao portfólio.
-*   **Solução Inicial:** Cópia estática para `public/projects`. (Gerou problemas de build e manutenção).
-*   **Solução Final:** Integração do código fonte em `projects/aurajewelry` e configuração de deploy separado na Vercel apontando para essa subpasta (Root Directory).
-*   **Bug 404:** Links com `.html` explícito quebravam no Vercel. Corrigido para Clean URLs (`/projects/aurajewelry/` ou domínio externo).
-
-#### FASE 3: Overhaul Visual do Aura (Transformação Luxuosa)
-*   Refizemos a `HeroSection.tsx`.
-*   Adicionamos animação de SVG (desenho do diamante) sincronizada.
-*   Implementamos paralaxe matemático seguindo o mouse.
-*   Aumentamos fontes (Tipografia: Playfair Display + Montserrat) para melhorar legibilidade e impacto.
-
-#### FASE 4: Polimento Final e Deploy
-*   **Favicons:** Criação de ativos exclusivos (VS Monogram e Diamond Logo) via geração de imagem por IA, substituindo ícones genéricos.
-*   **Cache Busting:** Renomeação de arquivos (`vector-favicon.png` -> `vs-favicon.png`) para forçar atualização em navegadores com cache agressivo.
-*   **SEO:** Limpeza manual de metatags no `index.html` para remover "Lovable" e inserir "Vector Studio".
+#### FASE 6: Otimização de Infraestrutura e Portfólio
+*   **Renomeação:** Padronização do projeto Vercel para `vector-studios`.
+*   **Refatoração do Portfólio:** Simplificação da exibição de sites, logos e camisas com novos componentes React.
+*   **Scripts:** Uso contínuo do `generatePortfolioManifests.cjs` para gestão de assets.
 
 ---
 
 ### 4. INSTRUÇÕES PARA O FUTURO (O "Manual")
 1.  **Novos Projetos no Portfólio:**
-    *   Criar pasta em `public/portfolio/PORTIFÓLIO STOCKS/SITES/`.
+    *   Criar pasta em `public/portfolio/PORTIFÓLIO STOCKS/SITES/` (ou `LOGOS`/`CAMISAS`).
     *   Adicionar imagem de capa + `_metadata.json` com a URL do projeto.
     *   Rodar `node generatePortfolioManifests.cjs`.
 2.  **Deploy de Sub-projetos:**
-    *   Na Vercel, criar novo projeto importando o MESMO repositório (`REPOSIT-RIO-DE-MIGUEL`).
+    *   Na Vercel, criar novo projeto importando o repositório principal.
     *   Mudar "Root Directory" para a pasta do projeto (ex: `projects/novosite`).
 3.  **Estilo:**
-    *   Sempre priorizar Tailwind com variáveis CSS (`--gold`, `--charcoal`) definidas no `index.css`.
-    *   Manter a consistência das animações (`animate-fade-up`, `animate-draw`).
+    *   Sempre priorizar Tailwind com variáveis CSS definidas no `index.css`.
+    *   Manter a consistência das animações e o foco em "Visual WOW".
 
 ---
 
-**Resumo da Personalidade da IA (Antigravity) neste projeto:**
-Atua como um "Engenheiro de Frontend Sênior + Designer de UI". Foco em soluções técnicas robustas (scripts, git hooks) mas com extrema sensibilidade estética. Proativo na correção de bugs de deploy.
+### 5. MEMÓRIAS DE DIÁLOGO E ESTILO DA IA (Para Futuras IAs)
+*   **Tom de Voz:** Técnico, porém criativo ("Engineering meets Art").
+*   **Prioridade Visual:** Se o código funciona mas o visual é básico, a tarefa não está concluída. Use gradientes, glows e animações Framer Motion.
+*   **Lógica de Gamificação:** Sempre use a lógica de XP e níveis estabelecida para manter a consistência do ecossistema Vector.
+*   **Autonomia:** O cliente (Miguel) aprecia proatividade na correção de bugs de deploy e na melhoria da estética sem precisar ser pedido explicitamente.
+*   **Conhecimento Herdado:** Esta IA entende que o projeto "Aura Jewelry" é o benchmark de qualidade para outros sites de clientes que entrarem no portfólio.
+
+---
+
+**Resumo da Personalidade da IA (Antigravity):**
+Engenheiro de Frontend Sênior + Designer de UI focado em estética Premium/Luxo. Especialista em React, Tailwind e animações de alto impacto.
+

@@ -27,8 +27,9 @@ Desenvolver o site da "Vector Studio", um portfólio de design que inclui um sis
 
 ## 4. Estado Atual e Próximo Passo
 
-*   **O que foi feito:** Todo o sistema de login, painel de administração e o CMS para a seção "Logotipos" estão implementados e o código está no GitHub.
-*   **Bloqueio Atual:** O usuário está enfrentando um período de "cooldown" da Vercel após ter deletado sua conta antiga.
-*   **PRÓXIMO PASSO (Ação do Usuário):** O usuário precisa esperar o período de cooldown acabar para poder criar uma nova conta na Vercel usando a opção **"Continue with GitHub"**. Depois disso, ele deve importar o repositório `Vector_Studio` e fazer o deploy para obter uma URL pública e estável.
+*   **O que foi feito:** O sistema de login, o CMS de Logotipos e a interface principal (Gamificada com XP/Moedas) estão finalizados. O portfólio agora é dinâmico via scripts.
+*   **Estado Vercel:** O projeto foi renomeado e centralizado como `vector-studios`. Subprojetos como Aura Jewelry funcionam via pastas em `projects/` com Root Directory configurado na Vercel.
+*   **PRÓXIMO PASSO:** Continuar a expansão do portfólio seguindo o novo `WORKFLOW_SITES.md` e manter a consistência visual via `VEX.txt`.
+
 
 Com estas notas, a próxima instância do Gemini poderá continuar o trabalho exatamente de onde paramos.
